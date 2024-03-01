@@ -6,7 +6,7 @@ const TaskList = ({ tasks, handleUpdateTaskStatus }) => {
     <ul>
       {tasks.map((task) => (
         <TaskItem
-       
+          key={task.id}
           task={task}
           handleUpdateTaskStatus={handleUpdateTaskStatus}
         />
