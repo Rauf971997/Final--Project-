@@ -12,3 +12,10 @@ export async function action() {
   const task = await createTask();
   return redirect(`/task/${task.id}/edit`);
 }
+
+export async function loader({ request }) {
+    const url = new URL(request.url);
+    const q = url.searchParams.get("q");
+    const tasks = await getTasks(q);
+    return { tasks, q };
+  }
