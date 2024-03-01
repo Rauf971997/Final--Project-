@@ -23,4 +23,4 @@ const FilterButtons = ({ handleFilter, filter }) => (
   </div>
 );
 
-
+export default FilterButtons;
