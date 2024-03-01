@@ -42,4 +42,4 @@ const TaskItem = ({ task, handleUpdateTaskStatus }) => (
   </li>
 );
 
-
+export default TaskItem;
