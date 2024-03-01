@@ -423,3 +423,11 @@ body {
     color: #fff;
   }
   
+
+
+  .completed-task {
+    text-decoration: line-through;
+    text-decoration-thickness: 3px;
+    opacity: 0.6;
+
+  }
