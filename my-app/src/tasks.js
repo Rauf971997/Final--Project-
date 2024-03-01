@@ -1,7 +1,5 @@
-
 import { matchSorter } from "match-sorter";
 import sortBy from "sort-by";
-
 
 export async function getTasks(query) {
   let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
@@ -22,13 +20,13 @@ export async function createTask() {
 
 export async function getTask(id) {
   let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
-  let task = tasks.find(task => task.id === id);
+  let task = tasks.find((task) => task.id === id);
   return task ?? null;
 }
 
 export async function updateTask(id, updates) {
   let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
-  let taskIndex = tasks.findIndex(task => task.id === id);
+  let taskIndex = tasks.findIndex((task) => task.id === id);
   if (taskIndex === -1) {
     throw new Error(`No task found for ID: ${id}`);
   }
@@ -39,7 +37,7 @@ export async function updateTask(id, updates) {
 
 export async function deleteTask(id) {
   let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
-  let filteredTasks = tasks.filter(task => task.id !== id);
+  let filteredTasks = tasks.filter((task) => task.id !== id);
   localStorage.setItem("tasks", JSON.stringify(filteredTasks));
   return filteredTasks.length < tasks.length;
 }
