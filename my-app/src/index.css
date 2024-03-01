@@ -1,4 +1,16 @@
-
+body {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),url("./img/main.jpg");
+    backdrop-filter: blur(35px);
+    background-attachment: fixed;
+  }
+  
   
   textarea,
   input,
