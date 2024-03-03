@@ -429,3 +429,54 @@ body {
     transition: opacity 0.4s ease-in-out;
   }
   
+
+  .add {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8)),url("./img/main.jpg");
+     background-position: cover;
+    animation: borderChange 5s infinite linear;
+    border: 2px solid transparent;
+    color: white;
+    padding: 14px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 24px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .add::before,
+  .add::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1); 
+    transition: all 0.4s ease;
+    z-index: -1;
+  }
+  
+  .add::before {
+    transform: rotate(45deg);
+  }
+  
+  .add::after {
+    transform: rotate(-45deg);
+  }
+  
+  .add:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .add:hover::before,
+  .add:hover::after {
+    background-color: rgba(255, 255, 255, 0.109);
+  }
+  

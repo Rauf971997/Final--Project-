@@ -62,7 +62,7 @@ export async function loader({ request }) {
           <div>
             <SearchForm searching={searching} q={q} />
             <Form method="post">
-              <button type="submit">New</button>
+              <button type="submit" className="add">New</button>
             </Form>
           </div>
           <FilterButtons handleFilter={handleFilter} filter={filter} />
