@@ -9,33 +9,38 @@ import TaskDetail, { loader as taskDetailLoader } from "./routes/TaskDetail";
 import { action as destroyAction } from "./routes/destroy";
 
 const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <MainPage />,
-      errorElement: <ErrorPage />,
-      loader: mainLoader,
-      action: mainAction,
-      children: [
-        {
-          path: "task/:taskId",
-          element: <TaskDetail />,
-          loader: taskDetailLoader,
-        },
-        {
-          path: "task/:taskId/edit",
-          element: <EditTask />,
-          loader: taskDetailLoader,
-          action: editAction,
-        },
-  
-        {
-          path: "task/:taskId/destroy",
-          action: destroyAction,
-        },
-      ],
-    },
-  ]);
-  
+  {
+    path: "/",
+    element: <MainPage />,
+    errorElement: <ErrorPage />,
+    loader: mainLoader,
+    action: mainAction,
+    children: [
+      {
+        errorElement: <ErrorPage />,
+        children: [
+          {
+            path: "task/:taskId",
+            element: <TaskDetail />,
+            loader: taskDetailLoader,
+          },
+          {
+            path: "task/:taskId/edit",
+            element: <EditTask />,
+            loader: taskDetailLoader,
+            action: editAction,
+          },
+          {
+            path: "task/:taskId/destroy",
+            action: destroyAction,
+            errorElement: <div>Oops! There was an error.</div>
+          },
+        ],
+      },
+    ],
+  },
+]);
+
   ReactDOM.createRoot(document.getElementById("root")).render(
     <React.StrictMode>
       <RouterProvider router={router} />
