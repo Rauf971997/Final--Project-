@@ -59,6 +59,7 @@ export async function loader({ request }) {
       <>
         <div id="sidebar">
           <h1>TO-DO LIST</h1>
+          
           <div>
             <SearchForm searching={searching} q={q} />
             <Form method="post">
