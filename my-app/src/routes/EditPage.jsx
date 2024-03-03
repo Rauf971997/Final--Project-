@@ -12,10 +12,12 @@ export default function EditTask() {
   const { task } = useLoaderData();
   const navigate = useNavigate();
   return (
+ <>
+ <h2>Edit Task</h2>
     <Form method="post" id="task-form">
-      <span>Title</span>
+      <p className="edit-par">Title</p>
       <input
-        placeholder="Title"
+        placeholder="Title..."
         aria-label="Title"
         type="text"
         name="title"
@@ -23,8 +25,8 @@ export default function EditTask() {
       />
 
       <label>
-        <span>Description</span>
-        <textarea name="description" defaultValue={task.description} rows={6} />
+        <p className="edit-par">Description</p>
+        <textarea name="description" placeholder="Description..." defaultValue={task.description} rows={6} />
       </label>
 
       <button type="submit" className="save-btn">
@@ -40,5 +42,7 @@ export default function EditTask() {
         Cancel
       </button>
     </Form>
+    </>
   );
+  
 }
