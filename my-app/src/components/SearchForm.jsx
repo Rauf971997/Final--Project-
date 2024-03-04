@@ -1,14 +1,13 @@
-import React from 'react';
-import { Form, useSubmit } from 'react-router-dom';
+import React from "react";
+import { Form, useSubmit } from "react-router-dom";
 
-const SearchForm = ({ searching, q }) => {
+const SearchForm = ({ q }) => {
   const submit = useSubmit();
 
   return (
     <Form id="search-form" role="search">
       <input
         id="q"
-        className={searching ? 'loading' : ''}
         aria-label="Search tasks"
         placeholder="Search"
         type="search"
@@ -21,7 +20,6 @@ const SearchForm = ({ searching, q }) => {
           });
         }}
       />
-      <div id="search-spinner" aria-hidden hidden={!searching} />
       <div className="sr-only" aria-live="polite"></div>
     </Form>
   );
