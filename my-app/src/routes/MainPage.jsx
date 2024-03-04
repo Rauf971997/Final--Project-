@@ -79,7 +79,7 @@ export async function loader({ request }) {
               handleUpdateTaskStatus={handleUpdateTaskStatus}
             />
           ) : (
-            <p>
+            <p >
               <i>No Tasks</i>
             </p>
           )}
