@@ -4,7 +4,7 @@ import sortBy from "sort-by";
 export async function getTasks(query) {
   let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
   if (query) {
-    tasks = matchSorter(tasks, query, { keys: ["title", "description"] });
+    tasks = matchSorter(tasks, query, { keys: ["title"] });
   }
   return tasks.sort(sortBy("title", "createdAt"));
 }
