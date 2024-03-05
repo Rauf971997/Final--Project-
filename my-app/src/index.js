@@ -2,7 +2,10 @@ import * as React from "react";
 import * as ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
-import MainPage, {loader as mainLoader, action as mainAction} from "./routes/MainPage";
+import MainPage, {
+  loader as mainLoader,
+  action as mainAction,
+} from "./routes/MainPage";
 import ErrorPage from "./routes/error-page";
 import EditTask, { action as editAction } from "./routes/EditPage";
 import TaskDetail, { loader as taskDetailLoader } from "./routes/TaskDetail";
@@ -33,7 +36,7 @@ const router = createBrowserRouter([
           {
             path: "task/:taskId/destroy",
             action: destroyAction,
-            errorElement: <div>Oops! There was an error.</div>
+            errorElement: <div>Oops! There was an error.</div>,
           },
         ],
       },
@@ -41,9 +44,8 @@ const router = createBrowserRouter([
   },
 ]);
 
-  ReactDOM.createRoot(document.getElementById("root")).render(
-    <React.StrictMode>
-      <RouterProvider router={router} />
-    </React.StrictMode>
-  );
-  
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <RouterProvider router={router} />
+  </React.StrictMode>
+);

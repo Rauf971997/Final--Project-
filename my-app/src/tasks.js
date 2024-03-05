@@ -9,19 +9,19 @@ export async function getTasks(query) {
   return tasks.sort(sortBy("title", "createdAt"));
 }
 
-    const now = new Date();
-    const day = String(now.getDate()).padStart(2, "0");
-    const month = String(now.getMonth() + 1).padStart(2, "0");
-    const year = now.getFullYear();
-    const hours = String(now.getHours()).padStart(2, "0");
-    const minutes = String(now.getMinutes()).padStart(2, "0");
-    const seconds = String(now.getSeconds()).padStart(2, "0");
+const now = new Date();
+const day = String(now.getDate()).padStart(2, "0");
+const month = String(now.getMonth() + 1).padStart(2, "0");
+const year = now.getFullYear();
+const hours = String(now.getHours()).padStart(2, "0");
+const minutes = String(now.getMinutes()).padStart(2, "0");
+const seconds = String(now.getSeconds()).padStart(2, "0");
 
 export async function createTask() {
   let id = Math.random().toString(36).substring(2, 9);
   let task = {
     id,
-    createdAt: `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`
+    createdAt: `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`,
   };
   let tasks = await getTasks();
   tasks.unshift(task);

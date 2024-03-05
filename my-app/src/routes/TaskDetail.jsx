@@ -17,7 +17,8 @@ export default function TaskDetail() {
             Title: <span className="task-title">{task.title}</span>
           </p>
           <p className="task-details-description">
-            Description: <span className="task-description">{task.description}</span>
+            Description:{" "}
+            <span className="task-description">{task.description}</span>
           </p>
         </div>
       </div>
